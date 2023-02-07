@@ -4,10 +4,14 @@
   grid-gap: 1px;
   background-color: black;
   padding: 1px;
-  width: 30%;
+  width: 50%;
 }
 
 .color-container {
   background-color: white;
   aspect-ratio: 1;
+}
+
+.color-container--hover {
+  background-color: black;
 }
