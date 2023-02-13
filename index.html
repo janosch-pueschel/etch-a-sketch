@@ -9,11 +9,16 @@
   </head>
   <body>
     <header>
-      <h1>Etch-a-Sketch</h1>
+      <h1 class="header__heading">Etch-a-Sketch</h1>
     </header>
     <main>
-      <div class="main__toolbar"></div>
-      <div class="grid-container"></div>
+      <div class="main__toolbar">
+        <input type="color" id="color-picker" />
+        <button id="rainbow-color-btn">Rainbow Mode</button>
+        <button id="eraser-btn">Eraser</button>
+        <button id="new-grid-btn">New Grid</button>
+      </div>
+      <div class="main__grid-container"></div>
     </main>
     <script src="script.js"></script>
   </body>
