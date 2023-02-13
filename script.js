@@ -36,7 +36,7 @@ function newGrid() {
   for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
     const colorContainer = document.createElement("div");
     colorContainer.classList.add("color-container");
-    colorContainer.addEventListener("click", () => {
+    colorContainer.addEventListener("mouseover", () => {
       colorContainer.classList.add("color-container--hover");
     });
     gridContainer.style.cssText = `grid-template: repeat(${numberOfSquares}, 1fr) / repeat(${numberOfSquares}, 1fr);`;
