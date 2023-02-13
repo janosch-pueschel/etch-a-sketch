@@ -1,12 +1,16 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #f0eeed;
+  background-color: #a3bbad;
   color: #332c39;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .header__heading {
   text-align: center;
+  color: #0e3b43;
+  font-size: 80px;
+  margin-bottom: 3vw;
 }
 
 main {
@@ -17,11 +21,16 @@ main {
   align-items: center;
 }
 
+/* @media only screen and (max-width: 768px) {
+  main {
+    flex-direction: column-reverse;
+  }
+} */
+
 .main__toolbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .main__grid-container {
@@ -30,15 +39,57 @@ main {
   grid-gap: 1px;
   background-color: black;
   padding: 1px;
-  width: 30%;
+  width: 50%;
 }
 
 .color-container {
-  background-color: #ffff;
+  background-color: #f4f0e8;
   aspect-ratio: 1;
 }
 
 button {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   background-color: #609ea2;
+  color: #0e3b43;
   min-width: 120px;
+  width: 100%;
+  min-height: 50px;
+  border: black 1px solid;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+button:hover {
+  border: #65532f 3px solid;
+}
+
+button:disabled {
+  background-color: #0e3b43;
+  color: #609ea2;
+  border: #65532f 3px solid;
+}
+
+.color-picker-form {
+  text-align: center;
+  margin-bottom: 10%;
+  color: #0e3b43;
+}
+
+#color-picker {
+  margin-bottom: 5%;
+  height: 50px;
+  width: 50px;
+}
+
+#rainbow-color-btn {
+  margin-bottom: 10%;
+}
+
+#eraser-btn {
+  margin-bottom: 30%;
+}
+
+#range-input-form {
+  text-align: center;
+  margin-bottom: 10%;
 }

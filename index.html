@@ -13,10 +13,28 @@
     </header>
     <main>
       <div class="main__toolbar">
-        <input type="color" id="color-picker" />
+        <form class="color-picker-form">
+          <input type="color" id="color-picker" />
+          <br />
+          <label>Color Picker</label>
+        </form>
+
         <button id="rainbow-color-btn">Rainbow Mode</button>
         <button id="eraser-btn">Eraser</button>
-        <button id="new-grid-btn">New Grid</button>
+        <form id="range-input-form">
+          <input
+            type="range"
+            min="1"
+            max="99"
+            name="Squares"
+            id="new-grid-range"
+            defa
+          />
+          <br />
+          <label>Squares: </label>
+          <span id="range-input">16 x 16</span>
+        </form>
+        <button id="new-grid-btn">New Sketchpad</button>
       </div>
       <div class="main__grid-container"></div>
     </main>

@@ -22,24 +22,9 @@ function renderGrid() {
 renderGrid();
 
 // Functions to render new grid using user input
-let numberOfSquares;
-function newNumberOfSquares() {
-  numberOfSquares = 0;
-  numberOfSquares = prompt(
-    "How many squares do you want your new grid to have?"
-  );
-  if (numberOfSquares === null) {
-    return;
-  } else if (numberOfSquares > 100) {
-    alert("Maximum number of squares is 100.");
-    newNumberOfSquares();
-  } else if (numberOfSquares < 1) {
-    alert("Your new grid has to have at least 1 square.");
-    newNumberOfSquares();
-  }
-}
 
 function newGrid() {
+  let numberOfSquares = gridRangeInput.value;
   if (numberOfSquares === null) {
     return;
   } else {
@@ -55,9 +40,13 @@ function newGrid() {
 }
 
 const newGridBtn = document.getElementById("new-grid-btn");
-newGridBtn.addEventListener("click", () => {
-  newNumberOfSquares();
-  newGrid();
+newGridBtn.addEventListener("click", newGrid);
+
+const gridRangeInput = document.getElementById("new-grid-range");
+const rangeValue = document.getElementById("range-input");
+gridRangeInput.addEventListener("input", () => {
+  rangeValue.textContent = `${gridRangeInput.value} x ${gridRangeInput.value}`;
+  console.log(gridRangeInput.value);
 });
 
 const colorPicker = document.getElementById("color-picker");
@@ -84,7 +73,7 @@ let color;
 
 function getColor() {
   if (eraserBtn.disabled === true) {
-    color = "#ffff";
+    color = "#f4f0e8";
   } else if (randomColorBtn.disabled === true) {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
