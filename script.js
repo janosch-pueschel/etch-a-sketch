@@ -2,20 +2,34 @@
 
 const gridContainer = document.querySelector(".grid-container");
 const body = document.querySelector("body");
+let mouseClicked = false;
 
-const newGridBtn = document.createElement("button");
-newGridBtn.textContent = "New Grid";
-body.appendChild(newGridBtn);
+gridContainer.addEventListener("mousedown", () => {
+  mouseClicked = true;
+  console.log(mouseClicked);
+});
+gridContainer.addEventListener("mouseup", () => {
+  mouseClicked = false;
+  console.log(mouseClicked);
+});
 
-for (let i = 0; i < 16 * 16; i++) {
-  const colorContainer = document.createElement("div");
-  colorContainer.classList.add("color-container");
-  colorContainer.addEventListener("mouseover", () => {
-    colorContainer.classList.add("color-container--hover");
-  });
-  gridContainer.appendChild(colorContainer);
+function renderGrid() {
+  for (let i = 0; i < 16 * 16; i++) {
+    const colorContainer = document.createElement("div");
+    colorContainer.classList.add("color-container");
+    colorContainer.addEventListener("mouseover", changeColor);
+    gridContainer.appendChild(colorContainer);
+  }
+}
+renderGrid();
+
+function changeColor() {
+  if (mouseClicked === true) {
+    this.style.backgroundColor = "black";
+  }
 }
 
+// Functions to render new grid using user input
 let numberOfSquares;
 function newNumberOfSquares() {
   numberOfSquares = 0;
@@ -36,14 +50,15 @@ function newGrid() {
   for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
     const colorContainer = document.createElement("div");
     colorContainer.classList.add("color-container");
-    colorContainer.addEventListener("mouseover", () => {
-      colorContainer.classList.add("color-container--hover");
-    });
+    colorContainer.addEventListener("mouseover", changeColor);
     gridContainer.style.cssText = `grid-template: repeat(${numberOfSquares}, 1fr) / repeat(${numberOfSquares}, 1fr);`;
     gridContainer.appendChild(colorContainer);
   }
 }
 
+const newGridBtn = document.createElement("button");
+newGridBtn.textContent = "New Grid";
+body.appendChild(newGridBtn);
 newGridBtn.addEventListener("click", () => {
   newNumberOfSquares();
   newGrid();
