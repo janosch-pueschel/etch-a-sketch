@@ -38,6 +38,11 @@ function newGrid() {
       const colorContainer = document.createElement("div");
       colorContainer.classList.add("color-container");
       colorContainer.addEventListener("mouseover", changeColor);
+      colorContainer.addEventListener("mousedown", function (event) {
+        event.preventDefault();
+        getColor();
+        colorContainer.style.backgroundColor = color;
+      });
       gridContainer.style.cssText = `grid-template: repeat(${numberOfSquares}, 1fr) / repeat(${numberOfSquares}, 1fr);`;
       gridContainer.appendChild(colorContainer);
     }

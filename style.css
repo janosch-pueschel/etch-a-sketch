@@ -21,16 +21,11 @@ main {
   align-items: center;
 }
 
-/* @media only screen and (max-width: 768px) {
-  main {
-    flex-direction: column-reverse;
-  }
-} */
-
 .main__toolbar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 10px;
 }
 
 .main__grid-container {
@@ -40,6 +35,8 @@ main {
   background-color: black;
   padding: 1px;
   width: 50%;
+  min-width: 350px;
+  max-width: 650px;
 }
 
 .color-container {
