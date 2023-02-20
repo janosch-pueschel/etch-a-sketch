@@ -16,10 +16,10 @@ function renderGrid() {
     const colorContainer = document.createElement("div");
     colorContainer.classList.add("color-container");
     colorContainer.addEventListener("mouseover", changeColor);
-    colorContainer.addEventListener("mousedown", function () {
+    colorContainer.addEventListener("mousedown", function (event) {
+      event.preventDefault();
       getColor();
       colorContainer.style.backgroundColor = color;
-      console.log("click")
     });
     gridContainer.appendChild(colorContainer);
   }
